@@ -13,6 +13,9 @@ export default (state=DEFAULT_STATE,action)=>{
         case types.ADD_ITEM:
             listArray.push(action.payload.name);
             return {...state, list: listArray};
+        case types.EDIT_ITEM:
+            listArray.push(action.payload.name);
+            return {...state, list: listArray};
         case types.DELETE_ITEM:
             let index = action.payload;
             listArray.splice(index,1);

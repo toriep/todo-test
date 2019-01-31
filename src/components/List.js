@@ -1,10 +1,14 @@
 import React, { Component, Fragment } from 'react';
 import {connect} from 'react-redux';
-import {getList, addItem, deleteItem} from '../actions';
+import {getList, addItem, deleteItem, editItem} from '../actions';
 
 class List extends Component{
     formInput = React.createRef();
-    itemRef = React.createRef();
+    editInput = React.createRef();
+
+    state = {
+        edit: false,
+    }
 
     componentDidMount(){
         this.props.getList()
@@ -15,7 +19,28 @@ class List extends Component{
         const item = {
             name : this.formInput.current.value,
         }
+        if(!item.name){
+            alert('Please fill out the form before submitting');
+            return;
+        }
         this.props.addItem(item);
+        event.currentTarget.reset();
+        this.props.getList();
+    }
+
+    enableEdit = ()=>{
+        this.setState({
+            edit: true
+        })
+    }
+
+    editItem = (event) => {
+        event.preventDefault();
+        const updatedValue = {
+            name : this.editInput.current.value,
+        }
+        debugger;
+        this.props.editItem(updatedValue);
         event.currentTarget.reset();
         this.props.getList();
     }
@@ -32,7 +57,10 @@ class List extends Component{
                     <li ref={this.itemRef} key={item}>
                     {item} 
                     </li>
-                    <button className="delete" onClick={()=>this.delete(i)}>delete</button> 
+                    <div>
+                        <button className="edit" onClick={()=>this.editItem(i)}>edit</button> 
+                        <button className="delete" onClick={()=>this.delete(i)}>delete</button> 
+                    </div>
                 </div>
             )
         })
@@ -44,8 +72,24 @@ class List extends Component{
                     <button className="submit-btn">Add Item</button>
                 </form>
                 <ul>
-                    {items}
+                    {/* {items} */}
+                    {this.state.edit ? 
+                        <form onSubmit={this.editItem}>
+                            <input type="text" name="name" ref={this.editInput} />
+                            <button className="edit-btn">Edit Item</button>
+                        </form>
+                        :
+                        {items}
+                        // <li ref={this.itemRef} key={item}>
+                        //     {item}
+                        //     <div>
+                        //         <button className="edit" onClick={this.enableEdit}>edit</button> 
+                        //         <button className="delete" onClick={()=>this.delete(i)}>delete</button> 
+                        //     </div>
+                        // </li>
+                    }
                 </ul>
+
             </div>
         )
     }
@@ -58,5 +102,5 @@ const mapStateToProps = (state) => {
 }
 
 export default connect(mapStateToProps,{
-    getList, addItem, deleteItem
+    getList, addItem, editItem, deleteItem
 })(List);

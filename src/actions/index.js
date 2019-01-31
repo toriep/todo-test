@@ -13,6 +13,13 @@ export function addItem(item){
     } 
 }
 
+export function editItem(newValue){
+    return{
+        type: types.EDIT_ITEM,
+        payload: newValue
+    } 
+}
+
 export function deleteItem(i){
     return{
         type: types.DELETE_ITEM,

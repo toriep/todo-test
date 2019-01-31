@@ -9,6 +9,14 @@
     align-items: center;
 }
 
+h1{
+    font-size: 3rem;
+}
+
+ul{
+    margin-top: 3em;
+}
+
 .item{
     width: 30vw;
     display: flex;
@@ -32,7 +40,6 @@ ul{
     padding: 8px 12px;
     text-transform: uppercase;
     background-color: #2eb09c;
-    color: #F2F2F2;
 }
 
 .submit-btn:hover{
@@ -45,6 +52,24 @@ input{
     width: 20vw;
 }
 
+.edit{
+    cursor: pointer;
+    color: black;
+    text-align: center;
+    letter-spacing: 0.5px;
+    border: 1px solid darkgray;
+    border-radius: 5px;
+    padding: 8px 12px;
+    text-transform: uppercase;
+    background-color: white;
+    margin-right: 10px;
+}
+
+.edit:hover{
+    background-color: darkgray;
+    color: white;
+}
+
 .delete{
     cursor: pointer;
     color: white;
@@ -55,7 +80,6 @@ input{
     padding: 8px 12px;
     text-transform: uppercase;
     background-color: #d32f2f;
-    color: #F2F2F2;
 }
 
 .delete:hover{
