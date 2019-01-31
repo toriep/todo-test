@@ -28,23 +28,25 @@ class List extends Component{
         const { list : {list} } = this.props;
         const items = list.map((item,i) =>{
             return(
-                <div>
+                <div className="item">
                     <li ref={this.itemRef} key={item}>
                     {item} 
-                    <button onClick={()=>this.delete(i)}>delete</button> </li>
+                    </li>
+                    <button className="delete" onClick={()=>this.delete(i)}>delete</button> 
                 </div>
             )
         })
         return(
-            <Fragment>
+            <div className="container">
+                <h1>To Do List</h1>
                 <form onSubmit={this.submitItem}>
-                    <input type="text" name="name" ref={this.formInput} />>
-                    <button>Submit</button>
+                    <input type="text" name="name" ref={this.formInput} />
+                    <button className="submit-btn">Add Item</button>
                 </form>
                 <ul>
                     {items}
                 </ul>
-            </Fragment>
+            </div>
         )
     }
 }
