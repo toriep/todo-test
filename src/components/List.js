@@ -43,9 +43,9 @@ class List extends Component{
         const items = list.map((item,i) =>{
             return(
                 <div  key={i} className="item">
-                    <li ref={this.itemRef}>
+                    <div className="single-item" ref={this.itemRef}>
                     {item} 
-                    </li>
+                    </div>
                     <button className="delete" onClick={()=>this.delete(i)}>delete</button> 
                 </div>
             )
@@ -60,9 +60,9 @@ class List extends Component{
                 <div className="info-box">
                     {this.state.emptyValue ? <span className="inform">Please fill out the form to add an item</span> : null}
                 </div>
-                <ul>
+                <div className="list">
                     {items}
-                </ul>
+                </div>
             </div>
         )
     }
