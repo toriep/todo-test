@@ -9,6 +9,14 @@
     align-items: center;
 }
 
+ul{
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .item{
     width: 30vw;
     display: flex;
@@ -16,10 +24,6 @@
     align-items: center;
     border-bottom: 0.5px solid lightgrey;
     height: 51px;
-}
-
-ul{
-    list-style-type: none;
 }
 
 .submit-btn{
@@ -60,4 +64,30 @@ input{
 
 .delete:hover{
     background-color: #a72424;
+}
+
+.info-box{
+    margin-top: 0.5rem;
+    height: 20px;
+}
+
+.inform{
+    font-size: .8rem;
+    color: #d32f2f;
+}
+
+button:focus {
+    outline:0;
+}
+input:focus {
+    outline:0;
+}
+
+@media all and (max-width: 500px) {
+    input {
+        width: 70vw;
+    }
+    .item{
+        width: 80vw;
+    }
 }
