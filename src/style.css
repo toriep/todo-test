@@ -9,7 +9,7 @@
     align-items: center;
 }
 
-ul{
+.list{
     list-style-type: none;
     display: flex;
     flex-direction: column;
@@ -85,7 +85,7 @@ input:focus {
 
 @media all and (max-width: 500px) {
     input {
-        width: 70vw;
+        width: 60vw;
     }
     .item{
         width: 80vw;
