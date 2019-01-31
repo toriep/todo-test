@@ -1,0 +1,63 @@
+.container {
+    font-family: 'Montserrat';
+    color: black;
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.item{
+    width: 30vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 0.5px solid lightgrey;
+    height: 51px;
+}
+
+ul{
+    list-style-type: none;
+}
+
+.submit-btn{
+    cursor: pointer;
+    color: white;
+    text-align: center;
+    letter-spacing: 0.5px;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 12px;
+    text-transform: uppercase;
+    background-color: #2eb09c;
+    color: #F2F2F2;
+}
+
+.submit-btn:hover{
+    background-color: #278e7e;
+}
+
+input{
+    height: 23px;
+    border-radius: 4px;
+    width: 20vw;
+}
+
+.delete{
+    cursor: pointer;
+    color: white;
+    text-align: center;
+    letter-spacing: 0.5px;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 12px;
+    text-transform: uppercase;
+    background-color: #d32f2f;
+    color: #F2F2F2;
+}
+
+.delete:hover{
+    background-color: #a72424;
+}
